@@ -1,0 +1,126 @@
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style mce_bogus="1" type="text/css">
+        body {
+            font-family: Calibri;
+        }
+        hr {
+        	border-width: 1px 0 0 0;
+        	border-style: solid;
+        }
+        .line-height1 {
+        	line-height: 18px;
+        }
+    </style>
+</head>
+<body align="center">
+
+<!--页面主体-->
+<div style="margin-top: 70px;">
+
+    <h3 style="text-align: center">${name}</h3>
+
+    <div style="text-align: center;font-size: 9pt;">
+        ${address}·${phone}·${mail}
+    </div>
+
+    <!--教育背景-->
+    <div style="text-align: left">
+        <h4 style="font-size: 12pt;">EDUCATION</h4>
+        <hr style="margin-top: -12px"/>
+        <#list eduExp as e>
+            <div>
+                <div style="width: 60%;float: left;font-weight: bold;font-size: 10.5pt;">${e.school}</div>
+                <div style="width: 40%;text-align: right;float: right;font-size: 10.5pt;">${e.city}</div>
+                <div style="clear:both;"></div>
+            </div>
+            <div style="height: 5px"></div>
+            <div>
+                <div class="line-height1" style="width: 60%;float: left;font-weight: bold;font-size: 10.5pt;"><i>${e.subject}</i></div>
+                <div style="width: 40%;text-align: right;float: right;font-size: 10.5pt;"><i>${e.start_time} -
+                    ${e.end_time}</i>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div style="height: 5px"></div>
+            <div>
+	            <#list e.edu_experience as ee>
+	                <div class="line-height1" style="font-size: 10pt;margin-bottom: 5px; width: 85%">${ee}</div>
+	            </#list>
+			</div>
+            <div style="height: 10px;"></div>
+        </#list>
+    </div>
+
+    <!--工作经验-->
+    <#list experience as ex>
+        <div style="text-align: left;margin-top: -12px">
+            <h4 style="font-size: 12pt;">${ex.title}</h4>
+            <hr style="margin-top: -12px"/>
+            <#list ex.workExp as w>
+                <div>
+                    <div style="width: 60%;float: left;font-weight: bold;font-size: 10.5pt;">${w.company}</div>
+                    <div style="width: 40%;text-align: right;float: right;font-size: 10.5pt;">${w.city}</div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div style="height: 5px"></div>
+                <div>
+                    <#list w.company_des as des>
+                        <div class="line-height1" style="width: 60%;float: left;font-size: 10.5pt;">
+                            <i>${des}</i>
+                        </div>
+                    </#list>
+                    <div style="width: 40%;text-align: right;float: right;font-size: 10.5pt;"><i>${w.start_time} -
+                        ${w.end_time}</i>
+                    </div>
+                    <div class="line-height1" style="width: 60%;float: left;font-weight: bold;font-size: 10.5pt;">
+                        <i>${w.department}，${w.position}</i>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div style="height: 0px"></div>
+                 <ul style="font-size: 10pt;margin: 0;margin-top: 5px; margin-left: -22px;padding-bottom: 0;">
+                     <#list w.workDes as d>
+                         <li class="line-height1" style="margin-bottom: 5px;width: 85%">${d}</li>
+                     </#list>
+                 </ul>
+                <div style="height: 10px;"></div>
+            </#list>
+        </div>
+
+    </#list>
+
+
+    <!--个人信息-->
+    <div style="text-align: left;margin-top: -12px">
+        <h4>PERSONAL INFORMATION</h4>
+        <hr style="margin-top: -12px"/>
+        <div>
+            <div style="width: 10%;float: left;font-size: 10pt;line-height: 18px;font-weight: bold">Languages:</div>
+            <div style="width: 90%;float: right;font-size: 10pt;line-height: 18px">${language}</div>
+        </div>
+        <div style="height: 20px"></div>
+        <div>
+            <div style="width: 6%;float: left;font-size: 10pt;line-height: 18px;font-weight: bold">Skills:</div>
+            <div style="width: 94%;float: right;font-size: 10pt;line-height: 18px">${skill}</div>
+        </div>
+        <div style="height: 20px"></div>
+        <div>
+            <div style="width: 8%;float: left;font-size: 10pt;line-height: 18px;font-weight: bold">Hobbies:</div>
+            <div style="width: 92%;float: right;font-size: 10pt;line-height: 18px">${hobby}</div>
+        </div>
+        <div style="height: 20px"></div>
+        <#list related_info as re>
+        <div>
+            <div style="width: 17%;float: left;font-size: 10pt;line-height: 18px;font-weight: bold">Other Information:</div>
+            <div style="width: 83%;float: right;font-size: 10pt;line-height: 18px">${re}</div>
+        </div>
+        </#list>
+    </div>
+
+</div>
+
+</body>
+</html>
